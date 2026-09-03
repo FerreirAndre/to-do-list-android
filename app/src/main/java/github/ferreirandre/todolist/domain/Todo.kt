@@ -20,7 +20,7 @@ val todo2 = Todo(
     id = 2,
     title = "segunda tarefa",
     description = "descricao da tarefa 2",
-    isCompleted = false
+    isCompleted = true
 )
 
 val todo3 = Todo(
