@@ -29,8 +29,9 @@ import github.ferreirandre.todolist.ui.theme.TodoListTheme
 @Composable
 fun TodoItem(
     todo: Todo,
-    onItemClick: ()->Unit,
-    onDeleteClick:()->Unit,
+    onItemClick: () -> Unit,
+    onCompleteChange: (Boolean) -> Unit,
+    onDeleteClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Surface(
@@ -47,7 +48,7 @@ fun TodoItem(
             modifier = Modifier.padding(16.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Checkbox(checked = todo.isCompleted, onCheckedChange = {})
+            Checkbox(checked = todo.isCompleted, onCheckedChange = onCompleteChange)
 
             Spacer(modifier = Modifier.width(8.dp))
 
@@ -82,7 +83,7 @@ fun TodoItem(
 @Composable
 private fun TodoItemPreview() {
     TodoListTheme {
-        TodoItem(todo1, onItemClick = {}, onDeleteClick = {})
+        TodoItem(todo1, onItemClick = {}, onCompleteChange = {}, onDeleteClick = {})
     }
 }
 
@@ -90,6 +91,6 @@ private fun TodoItemPreview() {
 @Composable
 private fun TodoItemCompletedPreview() {
     TodoListTheme {
-        TodoItem(todo2, onItemClick = {}, onDeleteClick = {})
+        TodoItem(todo2, onItemClick = {}, onCompleteChange = {},onDeleteClick = {})
     }
 }
