@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt.android)
+    kotlin("plugin.serialization") version libs.versions.kotlin
 }
 
 android {
@@ -54,6 +55,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.compose)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation("androidx.compose.material:material-icons-extended")
+    implementation(libs.kotlinx.serialization.json)
 
     testImplementation(libs.junit)
 
